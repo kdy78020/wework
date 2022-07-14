@@ -1,0 +1,916 @@
+*{margin: 0; padding: 0;}
+ul,ol{list-style: none;}
+a{text-decoration: none; color: inherit;}
+img{vertical-align: top;}
+button,select,option{background-color: rgba(0,0,0,0); border: 0;}
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#wrapper{
+    margin: 0 auto;
+    padding: 0 5px;
+    max-width: 2000px;
+    background-repeat: no-repeat;
+    background-image: url(../images/we_bg.png);
+    background-attachment: fixed;
+    background-position: center;
+    overflow: hidden;
+}
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+header h1{
+    order: 2;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+header h1 img{
+    width: 130px;
+}
+header .btn-menu{
+    order: 3;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+header .btn-menu span{
+    display: block;
+    width: 20px;
+    margin: 0 auto 3px;
+    height: 2px;
+    background-color: #000;
+}
+header .btn-menu span:last-child{
+    margin-bottom: 0;
+}
+header nav{
+    position: fixed;
+    top:0;
+    right: -100%;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    z-index: 99999;
+    background-color: #fff;
+}
+header nav .btn-close{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 28px;
+    height: 40px;
+}
+header nav .btn-close span{
+    display: block;
+    width: 40px;
+    background-color: #000;
+    height: 3px;
+    position: absolute;
+    transform-origin: center center;
+    width: 0;
+}
+header nav.on .btn-close span{
+    width: 28px;
+}
+header nav .btn-close span:nth-child(1){
+    top: 10px;
+    right: 20px;
+    transform-origin: left center;
+    transform: rotate(50deg);
+    transition: all 0.3s;
+}
+header nav .btn-close span:nth-child(2){
+    top: 10px;
+    right: 30px;
+    transform-origin: right center;
+    transform: rotate(-50deg);
+    transition: all 0.3s;
+    transition-delay: 0.2s;
+}
+header nav .logo{
+    margin: 25px 25px;
+}
+header nav .logo img{
+    width: 60px;
+}
+header nav .util{
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    top: 177px;
+    right: 53px;
+}
+header nav .util li{
+    opacity: 0;
+    transition: all 0.3s;
+}
+header nav.on  .util li{
+    opacity: 1;
+}
+header nav .util li:first-child{
+    margin-right: 50px;
+}
+header nav .util li a{
+    display: block;
+    width: 120px;
+    margin-right: 20px;
+}
+header nav .util li:first-child a{
+    display: block;
+    margin-right: 0;
+}
+header nav .util li:nth-child(2){
+    background-image: url(../images/log_in.png);
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: right;
+    transition-delay: 0.2s;
+    text-align: left;
+}
+header nav .gnb{
+    text-align: right;
+    position: absolute;
+    top: 280px;
+    right: 50px;
+}
+header nav .gnb li{
+    margin-bottom: 30px;
+}
+header nav .gnb li a{
+    overflow: hidden;
+}
+header nav .gnb li a span{
+    opacity: 0;
+    position: relative;
+    top: 100%;
+    transition: all 0.3s;
+}
+header nav .gnb li:nth-child(1) a span{transition-delay: 0.2s;}
+header nav .gnb li:nth-child(2) a span{transition-delay: 0.3s;}
+header nav .gnb li:nth-child(3) a span{transition-delay: 0.4s;}
+header nav .gnb li:nth-child(4) a span{transition-delay: 0.5s;}
+header nav.on .gnb li a span{top: 0; opacity: 1;}
+header nav .sns{
+    display: flex;
+    position: absolute;
+    right: 50px;
+    top: 70%
+}
+header nav .sns li{
+    margin-right: 20px;
+}
+header nav .sns li img{
+    width: 20px;
+}
+header nav .sns li:first-child img{
+    width: 10px;
+}
+
+/* 헤더 끝 */
+
+.banner h2{
+    font-family: 'Chosunilbo_myungjo';
+    font-size: 50px;
+    z-index: 9999;
+    position: relative;
+}
+.banner .pic{
+    margin-top:-30px ;
+}
+.banner .pic img{
+    width: 100%;
+    height: auto;
+}
+.banner .qui-menu{
+    display: flex;
+}
+.banner .qui-menu div{
+    width: calc(100% / 3) ;
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-right: 0;
+    position: relative;
+    right: -1px;
+}
+.banner .qui-menu div a{
+    display: block;
+    width: 100%;
+    padding: 3%;
+}
+.banner .qui-menu div:hover{
+    background-color: #000;
+    color: #fff;
+    transition: 0.5s;
+}
+.banner .qui-menu div span{
+    margin-bottom: 13px;
+    display: block;
+}
+.banner .qui-menu div:last-child{
+    border-right: 1px solid #000;
+}
+.banner .qui-menu div:nth-child(2){
+    position: relative;
+    left: -1px;
+}
+.banner .qui-menu div:nth-child(3){
+    position: relative;
+    left: -2px;
+}
+.banner .text{
+    display: none;
+}
+/* 배너 끝 */
+
+.section1{
+    position: relative;
+    margin-top: 100px;
+}
+.section1 .logo-w{
+    position: absolute;
+    top:25px;
+    left: 25px;
+}
+.section1 .logo-w img{
+    width: 60px;
+}
+.section1 h3{
+    background-color: #000;
+    background-size: 100% 100% ;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 50px;
+    font-family: 'Chosunilbo_myungjo';
+    text-align: right;
+}
+.section1 h3 p{
+    display: block;
+    padding: 150px 30px 200px 0;
+}
+.section1 .pic img{
+    width: 95%;
+    height: auto;
+    text-align: center;  
+}
+.section1 .pic{
+    text-align: center;
+    z-index: 9999;
+    position: relative;
+    top:-100px
+}
+.section1 .text{
+    width: 80%;
+    font-size: 18px;
+    margin-top:-60px ;
+}
+/* 섹션1 끝 */
+
+.section2{
+    position: relative;
+    background-color: #fff;
+}
+.section2 h3{
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    text-align: center;
+    padding: 60px 0 60px 0;
+}
+.section2 .con .btn img{
+    width: 30px;
+}
+.section2 .opt1 img{
+    width: 20px;
+}
+.section2 .opt1 .wrap1{
+    display: flex;
+    text-align: center;   
+}
+.section2 .opt1>p{
+    font-family: 'GmarketSansMedium';
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: center;    
+    padding: 30px 0;
+}
+.section2 .opt1 .box{
+    width: 40%;
+    margin: 0 auto;
+    position: relative;   
+    margin-right: 10px;
+    border-bottom:0;
+}
+.section2 .opt1 .box>p{
+    font-family: 'GmarketSansMedium';
+    background-color: #ccc;
+    background-image: url(../images/log_in.png);
+    background-repeat: no-repeat;
+    background-size: 13px;
+    border-radius: 20% 10%;
+    border: 1px solid #ccc;
+    padding: 3px 3px 3px 20px;
+    background-position: left center;
+    text-align: right;
+    position: absolute;  
+    top:10px;
+    right: 10px;
+    font-size: 10px;
+}
+.section2 .opt1 .wrap1 .box .title{
+    font-size: 15px;
+}
+.section2 .opt1 .wrap1 .box.full-floor .content{
+    padding-bottom: 10px;
+}
+.section2 .opt1 .wrap1 .box .content{
+    padding-bottom: 25px;
+    font-size: 13px;
+}
+.section2 .opt1 .box:hover{
+    transform: translateY(15px);
+}
+.section2 .opt1 .box:hover div .title{
+    transform: translateY(-15px);
+}
+.section2 .opt1 .box:hover div .content{
+    transform: translateY(-15px);
+}
+.section2 .opt1 .box{
+    transition: all 0.3s;
+}
+.section2 .opt1 .box img{
+    width: 80%;
+    transition: all 0.3s;
+}
+.section2 .opt1 .box img:hover{
+    transform: scale(1.05);
+}
+.section2 .opt1 .wrap1 .box div a{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.section2 .wrap2{
+    display: none;
+}
+.section2 .opt2{
+    padding-bottom: 30px ;
+}
+.section2 .opt2>p{
+    font-family: 'GmarketSansMedium';
+    font-size: 15px;
+    text-decoration: underline;
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+.section2 .opt2 .box{
+    width: 45%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s;
+    border-bottom: 0;
+}
+.section2 .opt2 .box:hover{
+    transform: translateY(15px);
+}
+.section2 .opt2 .box img:hover{
+    transform: scale(1.05);
+}
+.section2 .optw .box a{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+.section2 .opt2 .box img{
+    width: 80%;
+    transition: all 0.3s;
+}
+.section2 .opt2 .box p{
+    text-align: center;
+}
+.section2 .opt2 .box .title{
+    font-size: 15px;
+}
+.section2 .opt2 .box .content{
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+.section2 .opt2 .box:hover div .title{
+    transform: translateY(-15px);
+}
+.section2 .opt2 .box:hover div .content{
+    transform: translateY(-15px);
+}
+/* 섹션2 끝 */
+
+.section3 h3{
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    text-align: center;
+    padding: 90px 0 90px 0;
+}
+.section3 .boxes{
+    display: flex;
+}
+.section3 .boxes .box{
+    text-align: center;
+    background-color: #F4F3F3;
+    background-size: 100% auto;
+}
+.section3 .boxes .box .pic img{
+    width: 100%;   
+}
+.section3 .boxes .box .text{
+    width: 95%;
+    margin: 0 auto;
+}
+.section3 .boxes .box .text .title{
+    font-size: 20px;
+    padding: 30px 0 20px 0;
+}
+.section3 .boxes .box .text .content{
+    padding-bottom: 30px;
+}
+/* 섹션3 끝 */
+
+.section4{
+    padding: 60px 0 0;
+}
+.section4 h3{
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    text-align: center;
+    margin: 90px 0;
+}
+.section4 .boxes{
+    background-color: #E4E3E7;
+    display: flex;
+    justify-content: center;
+    padding: 60px 30px;
+}
+.section4 .boxes .box{
+    background-size: 100% auto;
+    max-width: 530px;
+}
+.section4 .boxes .box .pic{
+    text-align: center;
+}
+.section4 .boxes .box .pic img{
+    width: 100%;
+}
+.section4 .boxes .box .vid{}
+.section4 .boxes .box .vid iframe{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+.section4 .boxes .box:last-child{
+    display: none;
+}
+.section4 .boxes .box .text{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+.section4 .boxes .box .text .title{
+    font-size: 20px;
+    padding: 30px 0;
+}
+.section4 .boxes .box .text .content{
+    padding-bottom: 30px;
+}
+.section4 .boxes .box .text .button{
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    width: 150px;
+    margin: 0 auto;
+}
+/* 섹션4 끝 */
+
+.section5{
+    margin-bottom: 100px;
+    position: relative;
+}
+.section5 h3{
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+    text-align: center;
+    padding: 90px 0 0px 0;
+}
+
+.section5 .pagination{
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+    font-size: 60px;
+}
+
+.section5 .boxes .box{
+    background-color: #DDD9D3;
+    background-size: 100% auto;
+    padding: 50px 0 20px 0;
+}
+.section5 .boxes .box .title{
+    font-size: 50px;
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+    margin-bottom: -20px;
+    z-index: 9999;
+    position: relative;
+}
+.section5 .boxes .box .pic{
+    text-align: center;
+}
+.section5 .boxes .box .pic img{
+    width: 80%;
+}
+.section5 .boxes .box .content{
+    text-align: center;
+}
+.section5 .boxes .box .content p:first-child{
+    padding: 30px 0 20px 0;
+}
+.section5 .boxes .box .content p:last-child{
+    font-size: 20px;
+    padding-bottom: 40px;
+    
+}
+.section5 .boxes .box .content p:last-child span{
+    color: #A9A092;
+}
+.section5 .pagination{
+    color: #a9a092;
+    font-family: 'GmarketSansMedium';
+    z-index: 9999;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+}
+.section5 .pagination .current{
+    color: #000;
+}
+/* 섹션5 끝 */
+
+.footer{
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+}
+.footer .wrap1{
+    padding: 70px 30px;
+}
+.footer .boxes{
+    display: flex;
+    justify-content: center;
+}
+.footer .boxes .box ul{
+    display: block;
+    color: #ccc;
+}
+.footer .boxes .box ul li{
+    margin-top: 10px;
+}
+.footer .boxes .box{
+    width: 25%;
+    text-align: left;
+}
+.footer .sns ul{
+    justify-content: center;
+    display: flex;    
+}
+.footer .sns ul li{
+    text-align: center;
+    padding: 20px 20px;
+}
+.footer .sns ul li:first-child img{
+    width: 13px;
+}
+.footer .sns ul li img{
+    width: 20px;
+}
+.footer .address{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.footer .address>div{
+    font-size: 18px;
+}
+.footer .address p{
+    margin: 20px 0 30px 0;
+    font-size:18px;
+}
+.footer .rights{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.footer .rights ul{
+    display: flex;
+    justify-content: center;
+}
+.footer .rights ul li{
+    text-decoration: underline;
+    margin-right: 10px;
+}
+.footer .rights ul li:last-child{
+    margin-right: 0;
+}
+
+
+
+@media all and (min-width:1200px){
+    header{
+        position: relative;
+    }
+    header h1{
+        position: absolute;
+        top:25px;
+        left: 25px;
+    }
+    header nav{
+        position: fixed;
+        top:0;
+        right: -100%;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+        z-index: 99999;
+        background-color: #fff;
+    }
+    .banner{
+        width: 1000px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .banner h2{
+        font-size: 70px;
+    }
+    .banner .pic{
+        text-align: right;
+    }
+    .banner .pic img{
+        width: 800px;
+    }
+    .banner .qui-menu{
+        position: absolute;
+        right:-70px;
+        top:90%;
+        margin-top:-50px;
+    }
+    .banner .qui-menu div{
+        font-size: 30px;
+    }
+    .banner .qui-menu div a{
+        padding: 30px 30px;
+    }
+    .banner .qui-menu div span{
+        margin-bottom: 25px;
+        display: block;
+    }
+    .banner .text{
+        font-family: 'Chosunilbo_myungjo';
+        display: block;
+        background-color: #fff;
+        transform: rotate(-90deg);
+        z-index: 9999;
+        width: 300px;
+        position: absolute;
+        left:-140px;
+        font-weight: bold;
+    }
+    .section1 {
+        overflow: hidden;
+        margin-top: 400px;
+    }
+    .section1 .logo-w{
+        margin: 60px 65px;
+    }
+    .section1 h3{
+        text-align: left;
+        padding-left: 100px;
+    }
+    .section1 h3 p{
+        display: block;
+    }
+    .section1 .pic{
+        text-align: right;
+    }
+    .section1 .pic img{
+        width: 50%;
+    }
+    .section1 .text{
+        width: 30%;
+        position: absolute;
+        top:60%;
+        left:5%;
+    }
+    .section1 .text p{
+        display: block;
+        font-size: 25px;
+    }
+   .section2{
+        padding-left: 60px;
+   }
+    .section2 h3{
+        font-size: 40px;
+        text-align: left;
+    }
+    .section2 .opt1{
+        display: flex;
+    }
+    .section2 .opt1>p{
+        width: 40%;
+        text-align: left;
+        font-size: 18px;
+    }
+    .section2 .opt1 .box{
+        width: 25%;
+        margin: 0;
+    }
+    .section2 .opt1 .box:first-child{
+        margin-right: 20px;
+    }
+    .section2 .opt1 .wrap1{
+       width: 60%;
+       margin-right: 0;
+    }
+    .section2 .opt2{
+        display: flex;
+        padding-top: 100px;
+    }
+    .section2 .opt2>p{
+        width: 40%;
+        font-size: 18px;
+        text-align: left;
+    }
+    .section2 .opt2 .wrap{
+        width: 60%;
+    }
+    .section2 .opt2 .box{
+        text-align: center;  
+        margin: unset;
+        width: calc((100% - 60px) / 3c);
+    }
+    .section3{
+        padding-top:60px;
+    }
+    .section3 h3{
+        text-align: center;
+        font-size: 40px;
+    }
+    .section3 .boxes .box{
+        background-size: 100% auto;
+        width: auto;
+    }
+    .section3 .boxes .box.reverse{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .section3 .boxes .box .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        aspect-ratio: 160 / 107;
+    }
+    .section3 .boxes .box .text .title{
+        font-size: 20px;
+    }
+    .section3 .boxes .box .text .content{
+        font-size: 14px;
+    }
+    .section4 h3{
+        font-size: 40px;
+    }
+    .section4 .boxes .box:first-child{
+        margin-right: 30px;
+    }
+    .section4 .boxes .box:last-child{
+        display: block;
+    }
+    .section4 .boxes{
+        display: flex;
+    }
+    .section4 .boxes .box{
+        padding: 30px 20px;
+        width: clac((100% - 30px) / 2);
+    }
+    .section5{
+        position: relative;
+        padding-left: 60px;
+    }
+    .swiper .swiper-pagination{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .section5 h3{
+        text-align: left;
+        font-size: 40px;
+    }
+    .section5 .swiper{
+        width: 75%;
+        margin-right: 0;
+    }
+    .section5 .boxes .box:nth-child(2){display: block;}
+    .section5 .boxes{
+        display: flex;
+        margin-left: auto;
+    }
+    .section5 .boxes .box{
+        padding: 100px 0;
+    }
+    .section5 .boxes .box .pic img{
+        width: 85%;
+    }
+    .section5 .boxes .box .title{
+        position: absolute;
+        left: 10px;
+        top:50px;
+
+    }
+    .section5 .boxes .box .content{
+        display: flex;
+        position: absolute;
+        bottom: 27px;
+        right: 10px;
+    }
+    .section5 .boxes .box .content p:first-child{
+        font-size: 30px;
+    }
+    .section5 .boxes .box .content p:last-child{
+        font-size: 25px;
+    }
+    .section5 .boxes .box .content p:last-child span{
+        display: block;
+    }
+    .section5 .pagination{
+        font-size: 50px;
+        left: 23%;
+    }
+    .footer .wrap1{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .footer .wrap1 .boxes .box ul{
+        display: block;
+        font-size: 23px;
+    }
+    .footer .wrap1 .boxes .box ul li{
+        font-size: 20px;
+    }
+    .footer .wrap1 .boxes{
+        padding: 80px 0;
+    }
+    .footer .sns ul{
+        justify-content: right;
+    }
+    .footer .wrap2{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 80px;
+        font-size:20px;
+    }
+    .footer .wrap2 .address{
+        text-align: left;
+    }
+    .footer .wrap2 .rights{
+        background-image: url(../images/we_logo_w.png);
+        background-repeat: no-repeat;
+        background-size: 70px;
+        width: 700px;
+        height: auto;
+        padding-right: 0px;
+        background-position: right top;
+    }
+    .footer .wrap2 .rights ul{
+        justify-content: left;
+    }
+}
